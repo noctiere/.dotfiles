@@ -1,0 +1,146 @@
+/* --- Variables --- */
+@define-color background alpha(@theme_bg_color, 0.6);
+@define-color text_alpha alpha(@theme_text_color, 0.8);
+
+* {
+    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    border: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @theme_bg_color;
+    color: @theme_text_color;
+    border-radius: 8px;
+    border: 1px solid alpha(@accent_color, 0.2);
+}
+
+/* --- Container Style --- */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 5px 5px 0 5px;
+    padding: 1px;
+    border-radius: 8px;
+    background: @background;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: @text_alpha;
+}
+
+/* --- Interactive Elements --- */
+#custom-launcher,
+#clock,
+#group-tray-expander,
+#window,
+#group-stats,
+#network,
+#bluetooth,
+#battery,
+#language,
+#group-power {
+    min-width: 16px;
+    padding: 0 6px;
+}
+
+#custom-launcher:hover,
+#clock:hover,
+#custom-colorpicker:hover,
+#network:hover,
+#bluetooth:hover,
+#language:hover,
+#battery:hover #custom-quit:hover,
+#custom-quit:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-power:hover {
+    color: @accent_color;
+    background: alpha(@theme_fg_color, 0.1);
+    border-radius: 8px;
+}
+
+/* --- Workspace Improvements --- */
+#workspaces button {
+    padding: 0 4px;
+    margin: 2px 2px;
+    color: @theme_text_color;
+    background: alpha(@theme_fg_color, 0.3);
+    border-radius: 6px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button.active {
+    color: @theme_base_color;
+    background: @theme_text_color;
+    min-width: 30px;
+}
+
+#workspaces button.urgent {
+    background: #f53c3c;
+    color: white;
+}
+
+/* --- Taskbar --- */
+#workspaces .taskbar-window {
+    margin: 2px;
+    padding: 2px 2px;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces .taskbar-window.active {
+    background-color: red;
+    border-bottom: 2px solid @accent_color;
+}
+
+/* --- Battery States --- */
+#battery.charging {
+    color: #26a65b;
+}
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation: blink 0.5s linear infinite alternate;
+}
+@keyframes blink {
+    to {
+        background-color: rgba(245, 60, 60, 0.3);
+        color: #ffffff;
+    }
+}
+
+/* --- Groups Styling --- */
+#group-power .not-power > *,
+#group-stats .stats-item > * {
+    min-width: 16px;
+    padding: 0 4px;
+}
+
+#group-stats #custom-endpoint,
+#group-power #custom-endpoint {
+    min-width: 0;
+    padding: 0;
+}
+#group-power #custom-endpoint {
+    margin-right: 6px;
+}
+#group-stats #custom-endpoint {
+    margin-left: 6px;
+}
+
+#group-stats #cpu {
+    margin-left: 4px;
+}
+
+#group-power #custom-reboot {
+    margin-right: 4px;
+}
+
+#tray {
+    margin-left: 12px;
+}

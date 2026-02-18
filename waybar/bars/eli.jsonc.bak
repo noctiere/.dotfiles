@@ -1,0 +1,216 @@
+{
+  "layer": "top",
+  "position": "top",
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/launcher",
+    "clock",
+    "group/tray-expander",
+    "hyprland/window",
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "group/group-stats",
+    "network",
+    "bluetooth",
+    "hyprland/language",
+    "battery",
+    "group/group-power",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}:{windows}",
+    "format-window-separator": "",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+    },
+    "workspace-taskbar": {
+      "enable": true,
+      "update-active-window": true,
+      "format": "{icon}",
+      "icon-size": 16,
+      "orientation": "horizontal",
+      "ignore-list": ["code", "Firefox - .*"],
+      "on-click-window": "~/dots/waybar/bin/focus-window.sh {address} {button}",
+    },
+  },
+  "hyprland/language": {
+    "format-en": "US",
+    "format-ru": "RU",
+    "keyboard": "at-translated-set-2-keyboard",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+  },
+
+  "custom/launcher": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "vicinae toggle",
+    "escape": true,
+  },
+  "clock": {
+    "format": "{:%I:%M:%S}",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#fAfBfC'><b>{}</b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "shift_down",
+      "on-click": "shift_up",
+    },
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item",
+      "click-to-reveal": true,
+    },
+    "modules": ["custom/expand-icon-right", "tray"],
+  },
+  "hyprland/window": {
+    "format": "> {title}",
+    "rewrite": {
+      "(.*) Floorp": "🌎 $1",
+    },
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "wezterm open nmtui",
+  },
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "BT-off",
+    "format-disabled": "󰂲",
+    "format-connected-battery": "{device_battery_percentage}% 󰂯",
+    "format-alt": "{device_alias} 󰂯",
+    "tooltip-format": "{controller_alias} [{controller_address}]\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias} [{controller_address}]\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\n[{device_address}]",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} - {device_battery_percentage}%\n[{device_address}]",
+    "on-click-right": "hyprctl dispatch exec '[float; size 600 800; center] blueman-manager'",
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "on-click": "omarchy-menu power",
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+  },
+
+  "group/group-stats": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "children-class": "stats-item",
+      "click-to-reveal": true,
+    },
+    "modules": [
+      "custom/expand-icon-left",
+      "custom/colorpicker",
+      "cpu",
+      "memory",
+      "temperature",
+      "custom/endpoint",
+    ],
+  },
+  "custom/expand-icon-left": {
+    "format": "",
+    "tooltip": false,
+  },
+  "custom/expand-icon-right": {
+    "format": "",
+    "tooltip": false,
+  },
+  "custom/endpoint": {
+    "format": "|",
+    "tooltip": false,
+  },
+  "custom/colorpicker": {
+    "format": "",
+    "interval": "once",
+    "on-click": "hyprpicker -a",
+    "tooltip": false,
+  },
+  "cpu": {
+    "format": "󰻠",
+    "tooltip": true,
+  },
+  "memory": {
+    "format": "",
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "",
+  },
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 8,
+  },
+
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/power",
+      "custom/endpoint",
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot",
+    ],
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit",
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "hyprlock",
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot",
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now",
+  },
+}

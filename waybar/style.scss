@@ -1,0 +1,169 @@
+/* --- Variables --- */
+@define-color background alpha(@theme_bg_color, 0.6);
+@define-color text_alpha alpha(@theme_text_color, 0.8);
+/* Fallback for accent if not defined by theme */
+@define-color accent_color @theme_selected_bg_color;
+
+* {
+    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    border: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @theme_bg_color;
+    color: @theme_text_color;
+    border-radius: 8px;
+    border: 1px solid alpha(@accent_color, 0.3);
+}
+
+/* --- Container Style --- */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 4px 4px 0 4px;
+    padding: 2px;
+    border-radius: 8px;
+    background: @background;
+    border: 1px solid alpha(@theme_fg_color, 0.1);
+    color: @text_alpha;
+}
+
+/* --- Workspace Improvements --- */
+#workspaces {
+    background: transparent;
+    padding: 0;
+}
+
+#workspaces button {
+    min-width: 15px;
+    padding: 0 0 0 6px;
+    margin: 3px 2px;
+    color: @text_alpha;
+    background: alpha(@theme_fg_color, 0.25);
+    border-radius: 6px;
+}
+
+#workspaces button.active {
+    color: @theme_bg_color;
+    background: @accent_color;
+}
+
+#workspaces button.urgent {
+    background: #f53c3c;
+    color: white;
+}
+
+#workspaces button:hover {
+    background: alpha(@accent_color, 0.4);
+    color: @theme_text_color;
+}
+
+/* --- Module Styling --- */
+/* Target all labels inside widgets for consistent padding */
+.module,
+widget > label,
+widget > box {
+    padding: 0 6px;
+}
+
+#workspaces button,
+.module,
+#custom-launcher,
+#clock,
+#custom-swaync,
+#network,
+#bluetooth,
+#language,
+#battery,
+#custom-power {
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Fix hover grouping: specific targets */
+#custom-launcher:hover,
+#custom-reload:hover,
+#clock:hover,
+#custom-swaync:hover,
+#network:hover,
+#bluetooth:hover,
+#language:hover,
+#battery:hover,
+#custom-power:hover {
+    color: @accent_color;
+    background: alpha(@theme_fg_color, 0.2);
+}
+
+/* --- Drawer & Group Styling --- */
+/* The "pill" container inside the drawer */
+revealer > box {
+    background: alpha(@theme_fg_color, 0.05);
+    margin: 2px;
+    padding: 2px;
+    border-radius: 8px;
+}
+#group-tray-expander revealer > box,
+#group-stats revealer > box {
+    margin-left: 8px;
+}
+
+/* Special icons to indicate expandability */
+#custom-expand-icon-right,
+#custom-expand-icon-left {
+    color: alpha(@accent_color, 0.7);
+    font-size: 10px;
+    padding: 0 2px;
+}
+
+/* --- Hardware Colors & States --- */
+#cpu {
+    color: #89dceb;
+}
+#memory {
+    color: #cba6f7;
+}
+#temperature {
+    color: #f9e2af;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+#battery.warning:not(.charging) {
+    color: #fab387;
+}
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: blink 0.8s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: alpha(#f38ba8, 0.3);
+        color: #ffffff;
+    }
+}
+
+/* --- Tray --- */
+#tray {
+    padding: 0 4px;
+}
+#tray menu {
+    background: @theme_bg_color;
+    border: 1px solid alpha(@theme_fg_color, 0.3);
+    border-radius: 8px;
+    padding: 4px;
+}
+#tray menuitem {
+    padding: 1px 2px;
+    border-radius: 4px;
+}
+#tray menuitem:hover {
+    background: alpha(@accent_color, 0.2);
+}

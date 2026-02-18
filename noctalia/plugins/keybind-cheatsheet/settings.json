@@ -1,0 +1,170 @@
+{
+  "cheatsheetData": [
+    {
+      "title": "APPLICATIONS",
+      "binds": [
+        {
+          "keys": "Super + M",
+          "desc": "Exit Hyprland"
+        },
+        {
+          "keys": "Super + RETURN",
+          "desc": "Terminal"
+        },
+        {
+          "keys": "Super + E",
+          "desc": "File Manager"
+        },
+        {
+          "keys": "Super + SPACE",
+          "desc": "App Launcher"
+        },
+        {
+          "keys": "Super + B",
+          "desc": "Browser"
+        },
+        {
+          "keys": "Super + Shift + B",
+          "desc": "Browser (in-private)"
+        }
+      ]
+    },
+    {
+      "title": "WINDOW MANAGEMENT",
+      "binds": [
+        {
+          "keys": "Super + Q",
+          "desc": "Close window"
+        },
+        {
+          "keys": "Super + V",
+          "desc": "Toggle floating"
+        },
+        {
+          "keys": "Super + F",
+          "desc": "Fullscreen (with bar)"
+        },
+        {
+          "keys": "Super + Shift + F",
+          "desc": "Fullscreen (pure)"
+        },
+        {
+          "keys": "Super + Shift + P",
+          "desc": "Pseudo window"
+        },
+        {
+          "keys": "Super + Shift + I",
+          "desc": "Toggle split"
+        }
+      ]
+    },
+    {
+      "title": "WINDOWS NAVIGATION",
+      "binds": [
+        {
+          "keys": "Super + H",
+          "desc": "Move focus left"
+        },
+        {
+          "keys": "Super + L",
+          "desc": "Move focus right"
+        },
+        {
+          "keys": "Super + K",
+          "desc": "Move focus up"
+        },
+        {
+          "keys": "Super + J",
+          "desc": "Move focus down"
+        },
+        {
+          "keys": "Super + Shift + H",
+          "desc": "Move window left"
+        },
+        {
+          "keys": "Super + Shift + L",
+          "desc": "Move window right"
+        },
+        {
+          "keys": "Super + Shift + K",
+          "desc": "Move window up"
+        },
+        {
+          "keys": "Super + Shift + J",
+          "desc": "Move window down"
+        },
+        {
+          "keys": "Alt + TAB",
+          "desc": "Cycle to next window"
+        },
+        {
+          "keys": "Shift + Alt + TAB",
+          "desc": "Cycle to prev window"
+        }
+      ]
+    },
+    {
+      "title": "WORKSPACES NAVIGATION",
+      "binds": [
+        {
+          "keys": "Super + 1",
+          "desc": "Switch to workspace 1"
+        },
+        {
+          "keys": "Super + 2",
+          "desc": "Switch to workspace 2"
+        },
+        {
+          "keys": "Super + 3",
+          "desc": "Switch to workspace 3"
+        },
+        {
+          "keys": "Super + Shift + 1",
+          "desc": "Move window to workspace 1"
+        },
+        {
+          "keys": "Super + Shift + 2",
+          "desc": "Move window to workspace 2"
+        },
+        {
+          "keys": "Super + Shift + 3",
+          "desc": "Move window to workspace 3"
+        },
+        {
+          "keys": "Super + S",
+          "desc": "Toggle special workspace"
+        },
+        {
+          "keys": "Super + Shift + S",
+          "desc": "Move window to special workspace"
+        },
+        {
+          "keys": "Super + Scroll Down",
+          "desc": "Scroll active workspace forward"
+        },
+        {
+          "keys": "Super + Scroll Up",
+          "desc": "Scroll active workspace backward"
+        },
+        {
+          "keys": "Super + TAB",
+          "desc": "Next workspace"
+        },
+        {
+          "keys": "Super + Shift + TAB",
+          "desc": "Previous workspace"
+        },
+        {
+          "keys": "Super + Ctrl + TAB",
+          "desc": "Former workspace"
+        }
+      ]
+    }
+  ],
+  "detectedCompositor": "hyprland",
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "hyprlandConfigPath": "/home/noctiere/.dotfiles/hypr/land/binds.conf",
+  "modKeyVariable": "$mainMod",
+  "windowHeight": 850,
+  "windowWidth": 1400
+}

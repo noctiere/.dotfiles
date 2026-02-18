@@ -1,0 +1,7 @@
+[
+  {
+    "output": ["eDP-1"],
+    "include": ["~/.config/waybar/bars/eli.jsonc"],
+    "style": ["~/.config/waybar/style.scss"],
+  },
+]
