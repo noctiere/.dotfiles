@@ -169,11 +169,11 @@
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click-right": "hyprctl dispatch exec '[float; size 700 500; center] wezterm start nmtui'",
+    "on-click-right": "hyprctl dispatch exec '[float; size 1000 800; center] wezterm -e impala'",
   },
 
   "bluetooth": {
-	  // "format-icons": "["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"]",
+    // "format-icons": "["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"]",
     "format": "󰂯 {status}",
     // "format-alt": " {status}",
     // "format-connected": " {device_alias}",

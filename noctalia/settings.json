@@ -8,21 +8,23 @@
         "customLaunchPrefixEnabled": false,
         "density": "default",
         "enableClipPreview": true,
-        "enableClipboardHistory": false,
+        "enableClipboardHistory": true,
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
-        "overviewLayer": false,
+        "overviewLayer": true,
         "pinnedApps": [
+            "throne",
+            "dev.zed.Zed"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
-        "showIconBackground": false,
+        "showIconBackground": true,
         "sortByMostUsed": true,
-        "terminalCommand": "alacritty -e",
+        "terminalCommand": "wezterm -e",
         "useApp2Unit": false,
         "viewMode": "list"
     },
@@ -52,20 +54,20 @@
         "marginHorizontal": 4,
         "marginVertical": 4,
         "monitors": [
-            "eDP-1"
+            "eDP-1",
+            "HDMI-A-1"
         ],
         "outerCorners": true,
         "position": "top",
         "screenOverrides": [
             {
-                "displayMode": "auto_hide",
-                "enabled": true,
-                "name": "HDMI-A-1"
-            },
-            {
                 "displayMode": "always_visible",
                 "enabled": false,
                 "name": "eDP-1"
+            },
+            {
+                "enabled": false,
+                "name": "HDMI-A-1"
             }
         ],
         "showCapsule": true,
@@ -75,11 +77,11 @@
             "center": [
                 {
                     "characterCount": 2,
-                    "colorizeIcons": true,
+                    "colorizeIcons": false,
                     "emptyColor": "tertiary",
                     "enableScrollWheel": true,
                     "focusedColor": "primary",
-                    "followFocusedScreen": true,
+                    "followFocusedScreen": false,
                     "groupedBorderOpacity": 0.75,
                     "hideUnoccupied": false,
                     "iconScale": 0.75,
@@ -98,6 +100,16 @@
                         "minimumThreshold": 10
                     },
                     "id": "plugin:catwalk"
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 250,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "textColor": "none",
+                    "useFixedWidth": false
                 }
             ],
             "left": [
@@ -109,10 +121,10 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "HH:mm:ss",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatHorizontal": "HH:mm",
+                    "formatVertical": "HH mm — dd MM",
                     "id": "Clock",
-                    "tooltipFormat": "dd.MM.yyyy",
+                    "tooltipFormat": "dddd, dd MMM yyyy",
                     "useCustomFont": false
                 },
                 {
@@ -127,7 +139,7 @@
                     "id": "plugin:pomodoro"
                 },
                 {
-                    "compactMode": true,
+                    "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -141,24 +153,14 @@
                     "showLoadAverage": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
-                    "showNetworkStats": false,
+                    "showNetworkStats": true,
                     "showSwapUsage": false,
                     "textColor": "none",
                     "useMonospaceFont": true,
                     "usePadding": false
                 },
                 {
-                    "colorizeIcons": true,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 300,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "textColor": "none",
-                    "useFixedWidth": false
-                },
-                {
-                    "compactMode": false,
+                    "compactMode": true,
                     "compactShowAlbumArt": true,
                     "compactShowVisualizer": false,
                     "hideMode": "hidden",
@@ -171,7 +173,7 @@
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
-                    "showVisualizer": false,
+                    "showVisualizer": true,
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "linear"
@@ -226,16 +228,10 @@
                     "textColor": "none"
                 },
                 {
+                    "applyToAllMonitors": false,
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Brightness",
-                    "textColor": "none"
-                },
-                {
-                    "displayMode": "forceOpen",
-                    "iconColor": "none",
-                    "id": "KeyboardLayout",
-                    "showIcon": true,
                     "textColor": "none"
                 },
                 {
@@ -258,22 +254,21 @@
                 },
                 {
                     "defaultSettings": {
-                        "audioCodec": "opus",
-                        "audioSource": "default_output",
-                        "colorRange": "limited",
-                        "copyToClipboard": false,
-                        "directory": "",
-                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
-                        "frameRate": "60",
-                        "hideInactive": false,
-                        "iconColor": "none",
-                        "quality": "very_high",
-                        "resolution": "original",
-                        "showCursor": true,
-                        "videoCodec": "h264",
-                        "videoSource": "portal"
+                        "enableTodoIntegration": false,
+                        "notecardsEnabled": true,
+                        "pincardsEnabled": true,
+                        "position": "Bottom",
+                        "showCloseButton": false
                     },
-                    "id": "plugin:screen-recorder"
+                    "id": "plugin:clipper"
+                },
+                {
+                    "defaultSettings": {
+                        "playerName": "musicfox",
+                        "updateInterval": 200,
+                        "width": 300
+                    },
+                    "id": "plugin:mpris-lyric"
                 }
             ]
         }
@@ -341,10 +336,7 @@
         "shortcuts": {
             "left": [
                 {
-                    "id": "WallpaperSelector"
-                },
-                {
-                    "id": "NoctaliaPerformance"
+                    "id": "Notifications"
                 },
                 {
                     "defaultSettings": {
@@ -354,11 +346,33 @@
                         "textColor": "none"
                     },
                     "id": "plugin:timer"
+                },
+                {
+                    "id": "WallpaperSelector"
+                },
+                {
+                    "defaultSettings": {
+                        "audioCodec": "opus",
+                        "audioSource": "default_output",
+                        "colorRange": "limited",
+                        "copyToClipboard": false,
+                        "directory": "",
+                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+                        "frameRate": "60",
+                        "hideInactive": false,
+                        "iconColor": "none",
+                        "quality": "very_high",
+                        "resolution": "original",
+                        "showCursor": true,
+                        "videoCodec": "h264",
+                        "videoSource": "portal"
+                    },
+                    "id": "plugin:screen-recorder"
                 }
             ],
             "right": [
                 {
-                    "id": "Notifications"
+                    "id": "NoctaliaPerformance"
                 },
                 {
                     "id": "PowerProfile"
@@ -411,7 +425,25 @@
                         "statType": "Network",
                         "x": 20,
                         "y": 340
+                    },
+                    {
+                        "hideMode": "hidden",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 1.3495390864709127,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 700,
+                        "y": 920
                     }
+                ]
+            },
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
                 ]
             }
         ]
@@ -426,6 +458,7 @@
         "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
+        "launcherPosition": "end",
         "monitors": [
         ],
         "onlySameOutput": true,
@@ -434,24 +467,25 @@
         "pinnedStatic": false,
         "position": "bottom",
         "showFrameIndicator": true,
+        "showLauncherIcon": false,
         "sitOnFrame": false,
         "size": 1
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
-        "animationDisabled": false,
+        "animationDisabled": true,
         "animationSpeed": 2,
         "autoStartAuth": false,
         "avatarImage": "/home/noctiere/.face",
         "boxRadiusRatio": 1,
-        "clockFormat": "hh\\nmm",
-        "clockStyle": "custom",
+        "clockFormat": "hh:mm",
+        "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
         "enableLockScreenCountdown": true,
         "enableShadows": false,
-        "forceBlackScreenCorners": false,
+        "forceBlackScreenCorners": true,
         "iRadiusRatio": 0.5,
         "keybinds": {
             "keyDown": [
@@ -482,18 +516,20 @@
         "lockScreenBlur": 0.5,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
+            "eDP-1"
         ],
         "lockScreenTint": 0.5,
+        "passwordChars": true,
         "radiusRatio": 0.5,
         "reverseScroll": false,
         "scaleRatio": 1,
-        "screenRadiusRatio": 1,
+        "screenRadiusRatio": 0.5,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
-        "showScreenCorners": false,
+        "showScreenCorners": true,
         "showSessionButtonsOnLockScreen": true,
         "telemetryEnabled": false
     },
@@ -509,14 +545,14 @@
         "wallpaperChange": ""
     },
     "location": {
-        "analogClockInCalendar": false,
+        "analogClockInCalendar": true,
         "firstDayOfWeek": -1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
         "name": "Moscow",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
-        "showWeekNumberInCalendar": false,
+        "showWeekNumberInCalendar": true,
         "use12hourFormat": false,
         "useFahrenheit": false,
         "weatherEnabled": true,
@@ -566,7 +602,7 @@
         },
         "sounds": {
             "criticalSoundFile": "",
-            "enabled": false,
+            "enabled": true,
             "excludedApps": "discord,firefox,chrome,chromium,edge",
             "lowSoundFile": "",
             "normalSoundFile": "",
@@ -581,9 +617,10 @@
         "enabledTypes": [
             0,
             1,
-            2
+            2,
+            3
         ],
-        "location": "top_right",
+        "location": "bottom",
         "monitors": [
             "eDP-1"
         ],
@@ -593,7 +630,7 @@
         "autoUpdate": false
     },
     "sessionMenu": {
-        "countdownDuration": 10000,
+        "countdownDuration": 5000,
         "enableCountdown": true,
         "largeButtonsLayout": "grid",
         "largeButtonsStyle": true,
@@ -688,21 +725,21 @@
     "ui": {
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
-        "boxBorderEnabled": false,
-        "fontDefault": "JetBrainsMono Nerd Font",
+        "boxBorderEnabled": true,
+        "fontDefault": "CaskaydiaCove NF",
         "fontDefaultScale": 1,
-        "fontFixed": "JetBrainsMono Nerd Font Mono",
+        "fontFixed": "CaskaydiaCove NFM",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
         "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
-        "settingsPanelMode": "attached",
+        "settingsPanelMode": "window",
         "tooltipsEnabled": true,
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/noctiere/nix-config/home/users/noctiere/wallpapers",
+        "directory": "/home/noctiere/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

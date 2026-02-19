@@ -1,0 +1,7 @@
+wallpaper {
+    monitor = HDMI-A-1
+    path = ~/nix-config/home/users/noctiere/wallpapers/bay.jpg
+    fit_mode = cover
+}
+
+splash = false

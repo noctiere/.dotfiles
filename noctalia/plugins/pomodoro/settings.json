@@ -5,6 +5,6 @@
   "sessionsBeforeLongBreak": 4,
   "autoStartBreaks": false,
   "autoStartWork": false,
-  "compactMode": false,
+  "compactMode": true,
   "playSound": true
 }
