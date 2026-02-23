@@ -17,7 +17,10 @@
         "overviewLayer": true,
         "pinnedApps": [
             "throne",
-            "dev.zed.Zed"
+            "dev.zed.Zed",
+            "spotify",
+            "firefox",
+            "steam"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
@@ -33,9 +36,9 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
-        "visualizerType": "linear",
+        "visualizerType": "none",
         "volumeFeedback": false,
-        "volumeOverdrive": true,
+        "volumeOverdrive": false,
         "volumeStep": 5
     },
     "bar": {
@@ -173,7 +176,7 @@
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
-                    "showVisualizer": true,
+                    "showVisualizer": false,
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "linear"
@@ -199,6 +202,16 @@
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "defaultSettings": {
+                        "enableTodoIntegration": false,
+                        "notecardsEnabled": true,
+                        "pincardsEnabled": true,
+                        "position": "Bottom",
+                        "showCloseButton": false
+                    },
+                    "id": "plugin:clipper"
                 },
                 {
                     "hideWhenZero": false,
@@ -251,24 +264,6 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
-                },
-                {
-                    "defaultSettings": {
-                        "enableTodoIntegration": false,
-                        "notecardsEnabled": true,
-                        "pincardsEnabled": true,
-                        "position": "Bottom",
-                        "showCloseButton": false
-                    },
-                    "id": "plugin:clipper"
-                },
-                {
-                    "defaultSettings": {
-                        "playerName": "musicfox",
-                        "updateInterval": 200,
-                        "width": 300
-                    },
-                    "id": "plugin:mpris-lyric"
                 }
             ]
         }
@@ -323,11 +318,11 @@
                 "id": "brightness-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "weather-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "media-sysmon-card"
             }
         ],
@@ -425,19 +420,6 @@
                         "statType": "Network",
                         "x": 20,
                         "y": 340
-                    },
-                    {
-                        "hideMode": "hidden",
-                        "id": "MediaPlayer",
-                        "roundedCorners": true,
-                        "scale": 1.3495390864709127,
-                        "showAlbumArt": true,
-                        "showBackground": true,
-                        "showButtons": true,
-                        "showVisualizer": true,
-                        "visualizerType": "linear",
-                        "x": 700,
-                        "y": 920
                     }
                 ]
             },
@@ -560,22 +542,22 @@
     },
     "network": {
         "airplaneModeEnabled": false,
-        "bluetoothDetailsViewMode": "grid",
-        "bluetoothHideUnnamedDevices": false,
+        "bluetoothDetailsViewMode": "list",
+        "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 60000,
-        "bluetoothRssiPollingEnabled": false,
-        "disableDiscoverability": false,
+        "bluetoothRssiPollingEnabled": true,
+        "disableDiscoverability": true,
         "wifiDetailsViewMode": "grid",
         "wifiEnabled": true
     },
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "4000"
+        "nightTemp": "3500"
     },
     "notifications": {
         "backgroundOpacity": 1,
